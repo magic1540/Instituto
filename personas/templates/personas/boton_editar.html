@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>editar</title>
+</head>
+<body>
+    <h1>buscar para evitar datos copiados del  alumno </h1>
+    <form action="buscar_para_editar" method="post" >
+        {% csrf_token %}
+     <label>ingrese rut a buscar para modificar:</label>
+      <input type="text" name="rut">
+        <input type="submit" name="opcion" value="Buscar">
+    </form>
+</body>
+</html>

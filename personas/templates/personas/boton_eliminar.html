@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>buscar</title>
+</head>
+<body>
+    <h1>eliminar alumno </h1>
+    <form action="eliminar_por_rut" method="post" >
+        {% csrf_token %}
+     <label>ingrese rut a eliminar:</label>
+      <input type="text" name="rut">
+        <input type="submit" name="opcion" value="eliminar">
+    </form>
+</body>
+</html>

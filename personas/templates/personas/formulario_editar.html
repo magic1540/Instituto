@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>formulario editar</title>
+
+</head>
+<body>
+<h1>Editar datos del alumno</h1>
+<br><br>
+<form action="actualizar_alumno" method="post">
+    {% csrf_token %}
+<input type="hidden" name="id_alumno" value="{{alumno.id_alumno}}">
+<label>Rut:</label><input type="text" name="rut" value="{{alumno.rut}}"><br>
+<label>Nombre:</label><input type="text" name="nombre" value="{{alumno.nombre}}"><br>
+<label>A.Paterno:</label><input type="text" name="apaterno" value="{{alumno.apellido_paterno}}"><br>
+<label>A.Materno:</label><input type="text" name="amaterno" value="{{alumno.apellido_materno}}"><br>
+<label>Fecha Nac:</label><input type="date" name="fechaNac" value="{{alumno.fecha_nacimiento|date:'Y-m-d'}}"><br>
+<label>Genero:</label>
+<select name="genero">
+    <option value="Seleccionar" disabled>Seleccionar</option>
+    {% if alumno.genero == "masculino"%}
+        <option value="Masculino" selected>Masculino</option>
+    {% else %}
+        <option value="Masculino">Masculino</option>
+    {% endif %}
+
+    {% if alumno.genero == "femenino"%}
+        <option value="Femenino" selected>Femenino</option>
+    {% else %}
+        <option value="Femenino">Femenino</option>
+    {% endif %}
+
+</select>
+<br><br>
+<input type="submit" name="opcion" value="Grabar">
+</form>
+</body>
+</html>

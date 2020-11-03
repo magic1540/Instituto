@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mostrar datos</title>
+</head>
+<body>
+<h1>listado de alumnos</h1>
+    <br><br>
+
+    la cantidad de alumnos es: {{alumnos|length}} <br> <br>
+
+    {% for alumno in alumnos %}
+
+        {{alumno.rut}} - {{alumno.nombre}} - {{alumno.apellido_paterno}} - {{alumno.apellido_materno}}- {{alumno.fecha_nacimiento}} <br>
+
+
+    {% endfor %}
+
+</body>
+</html>
